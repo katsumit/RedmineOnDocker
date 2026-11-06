@@ -2,3 +2,11 @@ db_password.txt
 secret_key_base.txt
 kc_admin_password.txt
 data/
+# SSL Certificates (Ticket #133)
+*.key
+*.crt
+*.csr
+certs/
+
+# Test Environment Variables
+tests/.env.test
