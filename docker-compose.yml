@@ -13,7 +13,7 @@ services:
     container_name: global-proxy
     ports:
       - "80:80" # ホストの80番ポート（ポート番号なし）で受け口を作る
-      - "443:443" 
+      - "192.168.0.66:443:443" 
     volumes:
       # 主設定ファイルではなく、追加設定(app.conf)としてマウントします
       - ./nginx.conf:/etc/nginx/conf.d/app.conf:ro
