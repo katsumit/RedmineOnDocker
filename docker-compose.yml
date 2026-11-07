@@ -13,11 +13,14 @@ services:
     container_name: global-proxy
     ports:
       - "80:80" # ホストの80番ポート（ポート番号なし）で受け口を作る
+      - "443:443" 
     volumes:
       # 1. あなたのカスタム設定（そのまま維持）
       - ./nginx.conf:/etc/nginx/conf.d/app.conf:ro
       # 2. ★これを追記：Nginxのデフォルト設定ファイルを空ファイルで上書きして無効化
       - /dev/null:/etc/nginx/conf.d/default.conf:ro
+      # 3. SSL証明書をマウント
+      - ./certs:/etc/nginx/certs:ro
     networks:
       - frontend
     depends_on:
