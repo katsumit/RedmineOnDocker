@@ -47,6 +47,7 @@ services:
       # ★この2行をセットで指定します（他のURL関連変数は削除）
       RAILS_RELATIVE_URL_ROOT: /redmine
       SCRIPT_NAME: /redmine
+      OAUTH_KEYCLOAK_SITE: https://global-proxy:4443/keycloak
     depends_on:
       db:
         condition: service_healthy
