@@ -52,6 +52,7 @@ services:
       OAUTH_KEYCLOAK_SSL_VERIFY: "false"
       RUBYOPT: "-W0" 
       SSL_CERT_FILE: /tmp/server.crt
+      ONLY_SSL_VERIFY_NONE: "true"
     depends_on:
       db:
         condition: service_healthy
