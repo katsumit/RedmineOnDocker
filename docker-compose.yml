@@ -59,6 +59,7 @@ services:
       - db_password
       - secret_key_base
     extra_hosts: 
+      - "localhost:host-gateway"
       - "desktop-ltq5mav:host-gateway"
   db:
     image: mysql:8.0
