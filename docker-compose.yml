@@ -48,6 +48,8 @@ services:
       RAILS_RELATIVE_URL_ROOT: /redmine
       SCRIPT_NAME: /redmine
       OAUTH_KEYCLOAK_SITE: https://global-proxy:4443/keycloak
+      OAUTH_KEYCLOAK_SSL_VERIFY: "false"
+      RUBYOPT: "-W0" 
     depends_on:
       db:
         condition: service_healthy
