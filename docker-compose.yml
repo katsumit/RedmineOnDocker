@@ -122,6 +122,17 @@ services:
       - db_password
       - kc_admin_password
     restart: always
+  dns:
+    image: dockurr/dnsmasq:latest
+    container_name: local-dns
+    ports:
+      - "192.168.0.4:53:53/udp"
+      - "192.168.0.4:53:53/tcp"
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
+    cap_add:
+      - NET_ADMIN
+    restart: always
 
 networks:
   frontend:
